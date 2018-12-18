@@ -1,4 +1,4 @@
-workspace(name="org_dnosproject_dnos")
+workspace(name = "org_dnosproject_dnos")
 
 load("//tools/build/bazel:generate_workspace.bzl", "generated_maven_jars")
 

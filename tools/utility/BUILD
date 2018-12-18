@@ -7,7 +7,7 @@ COMPILE_DEPS = COMPILE + [
 ]
 
 java_library(
-    name = "umbrella-utility-rest-tools",
+    name = "dnos-utility-rest-tools",
     srcs = glob(["*.java"]),
     visibility = ["//visibility:public"],
     deps = COMPILE_DEPS,

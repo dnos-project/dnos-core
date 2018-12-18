@@ -1,7 +1,7 @@
 load("//tools/build/bazel:generate_workspace.bzl", "COMPILE")
 
 COMPILE_DEPS = COMPILE + [
-    "//tools/utility:umbrella-utility-rest-tools",
+    "//tools/utility:dnos-utility-rest-tools",
     "//api/eventServiceApi:dnos-event-service-api",
     "//core/notificationService/eventConsumerService:dnos-event-consumer-service",
     "@kafka_clients//jar",
