@@ -19,10 +19,7 @@ package config;
 
 import org.apache.log4j.PropertyConfigurator;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+
 
 /**
  * Configuration service.
@@ -40,62 +37,10 @@ public class ConfigService {
         return this.config;
     }
 
-    public void readConfigFile() {
-        Properties prop = new Properties();
-        InputStream input = null;
-
-
-        try {
-
-            input = new FileInputStream("config.properties");
-
-            // load a properties file
-            prop.load(input);
-
-
-
-            config.setControllerName(prop.getProperty("controller"));
-            config.setAPI_ON(prop.getProperty("API_ON"));
-
-
-        } catch (IOException ex) {
-
-            ex.printStackTrace();
-        } finally {
-            if (input != null) {
-                try {
-                    input.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-        }
-    }
-
-    public int getApiOn() {
-        ConfigService configService = new ConfigService();
-        configService.readConfigFile();
-        Config config = configService.getConfig();
-        return Integer.parseInt(config.getAPI_ON());
-    }
-
-    public String getControllerName() {
-
-        String controllerName;
-        ConfigService configService = new ConfigService();
-        configService.readConfigFile();
-        Config config = configService.getConfig();
-
-        controllerName = config.getControllerName();
-
-        return controllerName;
-    }
 
 
     public void init() {
         PropertyConfigurator.configure("resources/log4j.properties");
-
 
     }
 
